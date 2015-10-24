@@ -3,11 +3,14 @@
 // }]);
 
 // ==================================================
-// LOGIN CONTROLLER ==
+// LOGIN CONTROLLER =================================
 // ==================================================
 
 app.controller("LoginController", ["$scope", "$location", "$http", "$auth", "$anchorScroll", function ($scope, $location, $http, $auth, $anchorScroll){
-	$scope.authenticateUser = function(){
+    
+    $scope.test = "THIS IS WORKING";
+
+    $scope.authenticateUser = function(){
 	//Send authentication request to Google
 		$auth.authenticate('google_oauth2');
 	};
@@ -65,7 +68,7 @@ app.controller("AdditionalInfoController", ["$scope", "$location", "User", "$rou
 // GLOBAL CONTROLLER FOR LOGIN AND LOGOUT EVENTS ====
 // ==================================================
 app.controller("GlobalController", ["$scope", "$location", "$http","$rootScope", "User","$auth", "$log", "$routeParams", function ($scope, $location, $http, $rootScope, User, $auth, $log, $routeParams){
-	
+	$scope.test = "THIS IS WORKING";
 //TODO handle auth:login-failure gracefully    
     //Function to check when someone is logged in and redirect them to the appopriate place
     $rootScope.$on('auth:login-success', function(ev, user) {
