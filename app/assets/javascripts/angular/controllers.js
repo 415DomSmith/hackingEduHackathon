@@ -1,6 +1,3 @@
-// app.controller("LoginController", ["$scope", "$location", "$http", function ($scope, $location, $http){
-// 	$scope.test = "WELCOME TO myHW.";
-// }]);
 
 // ==================================================
 // LOGIN CONTROLLER =================================
@@ -26,6 +23,19 @@ app.controller("LoginController", ["$scope", "$location", "$http", "$auth", "$an
         $anchorScroll();
     };
 }]);//END LOGIN CONT
+
+
+// ==================================================
+// COURSES INDEX CONTROLLER =========================
+// ==================================================
+
+app.controller("CoursesIndexController", ["$scope", "$location", "$http", "$auth", "$anchorScroll", function ($scope, $location, $http, $auth, $anchorScroll){
+    
+    $scope.test = "THIS IS WORKING";
+    
+}]);//END COURSE INDEX CONT
+
+
 
 // ==================================================
 // ADDITIONAL INFO CONTROLLER =======================

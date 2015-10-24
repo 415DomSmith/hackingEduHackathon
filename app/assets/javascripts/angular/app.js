@@ -44,17 +44,18 @@ app.config(["$routeProvider", function ($routeProvider){
 		controller: 'LoginController'
 	})
 
+
 	//Additional Info
 	.when('/users/:id/additional_info', {
 		templateUrl: 'partials/additionalInfo.html',
 		controller: 'AdditionalInfoController'
 	})
-	
-	//Profile Template
-	.when('/users/:id/profile', {
-		templateUrl: 'partials/profile.html',
-		controller: 'ProfileController'
+
+	.when('/users/:id/courses', {
+		templateUrl: 'partials/coursesIndex.html',
+		controller: 'CoursesIndexController'
 	})
+	
 	.otherwise({ redirectTo: '/'});
 }]);
 
