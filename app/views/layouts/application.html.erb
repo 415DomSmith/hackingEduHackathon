@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>FistOfFive</title>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="fistOfFive" ng-controller="GlobalController">
 
-<%= yield %>
+<div ng-view autoscroll="true"></div>
 
 </body>
 </html>
