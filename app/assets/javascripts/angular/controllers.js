@@ -153,3 +153,7 @@ app.controller("GlobalController", ["$scope", "$location", "$http","$rootScope",
     };
 
 }]);//END GLOBAL CONT
+
+app.controller("SurveyController", ["$scope", "$location", "$http","$rootScope", "User","$auth", "$log", "$routeParams", function ($scope, $location, $http, $rootScope, User, $auth, $log, $routeParams){
+    $scope.foo = console.log("FOO");
+}]);//END SURVEY CONT

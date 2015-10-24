@@ -49,11 +49,15 @@ app.config(["$routeProvider", function ($routeProvider){
 		templateUrl: 'partials/additionalInfo.html',
 		controller: 'AdditionalInfoController'
 	})
-	
+		
 	//Profile Template
 	.when('/users/:id/profile', {
 		templateUrl: 'partials/profile.html',
 		controller: 'ProfileController'
+	})
+	.when('/survey', {
+		templateUrl: 'partials/survey.html',
+		controller: 'SurveyController'
 	})
 	.otherwise({ redirectTo: '/'});
 }]);
