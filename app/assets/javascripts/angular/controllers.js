@@ -80,36 +80,36 @@ app.controller("AdditionalInfoController", ["$scope", "$location", "User", "$rou
 app.controller("GlobalController", ["$scope", "$location", "$http","$rootScope", "User","$auth", "$log", "$routeParams", function ($scope, $location, $http, $rootScope, User, $auth, $log, $routeParams){
 	$scope.test = "THIS IS WORKING";
 //TODO handle auth:login-failure gracefully    
-    //Function to check when someone is logged in and redirect them to the appopriate place
-    $rootScope.$on('auth:login-success', function(ev, user) {
-              // Find the user in the database to check if they're new or already have an account
-       User.get({id: user.id})
-               .$promise.then(function(loggedInUser){
-                 //Set user on rootScope for access everywhere
-                       $rootScope.user_id = loggedInUser.user.id;
-                       // If the user is new...
-                       if(loggedInUser.user.isNewUser) {
-                               $location.path("/users/" + loggedInUser.user.id + "/additional_info");
-                               //Redirect additional info page
-                       } else {
-                       // If not, send them to their dashboard
-                           $location.path("/users/" + loggedInUser.user.id);
-                       }
-               });
-	});
+ //    //Function to check when someone is logged in and redirect them to the appopriate place
+ //    $rootScope.$on('auth:login-success', function(ev, user) {
+ //              // Find the user in the database to check if they're new or already have an account
+ //       User.get({id: user.id})
+ //               .$promise.then(function(loggedInUser){
+ //                 //Set user on rootScope for access everywhere
+ //                       $rootScope.user_id = loggedInUser.user.id;
+ //                       // If the user is new...
+ //                       if(loggedInUser.user.isNewUser) {
+ //                               $location.path("/users/" + loggedInUser.user.id + "/additional_info");
+ //                               //Redirect additional info page
+ //                       } else {
+ //                       // If not, send them to their dashboard
+ //                           $location.path("/users/" + loggedInUser.user.id);
+ //                       }
+ //               });
+	// });
     
-    // Function to redirect back to login after a refresh
-    $rootScope.$on('$routeChangeStart', function (event, next, current) {
-        if (!$rootScope.user_id) {
-            $location.url("/login/");
-        } else{
-            User.get({id: $rootScope.user_id}, function(user){
-                $scope.currentUser = user;
-                // console.log($scope.currentUser);
-                // console.log($scope.currentUser.user.isTeacher);
-            });
-        }
-    });
+    // // Function to redirect back to login after a refresh
+    // $rootScope.$on('$routeChangeStart', function (event, next, current) {
+    //     if (!$rootScope.user_id) {
+    //         $location.url("/login/");
+    //     } else{
+    //         User.get({id: $rootScope.user_id}, function(user){
+    //             $scope.currentUser = user;
+    //             // console.log($scope.currentUser);
+    //             // console.log($scope.currentUser.user.isTeacher);
+    //         });
+    //     }
+    // });
 
     $scope.dashboard = function() {
       $location.path("/users/" + $rootScope.user_id);
