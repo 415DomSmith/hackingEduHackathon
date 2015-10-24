@@ -45,11 +45,11 @@ app.config(["$routeProvider", function ($routeProvider){
 	})
 
 
-	//Additional Info
-	.when('/users/:id/additional_info', {
-		templateUrl: 'partials/additionalInfo.html',
-		controller: 'AdditionalInfoController'
-	})
+	// //Additional Info
+	// .when('/users/:id/additional_info', {
+	// 	templateUrl: 'partials/additionalInfo.html',
+	// 	controller: 'AdditionalInfoController'
+	// })
 
 
 	.when('/users/:id/courses', {
@@ -57,7 +57,6 @@ app.config(["$routeProvider", function ($routeProvider){
 		controller: 'CoursesIndexController'
 	})
 	
-		
 	.when('/survey', {
 		templateUrl: 'partials/survey.html',
 		controller: 'SurveyController'
