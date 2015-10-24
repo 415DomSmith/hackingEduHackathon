@@ -11,9 +11,6 @@ app.controller("LoginController", ["$scope", "$location", "$http", "$auth", "$an
 	//Send authentication request to Google
 		$auth.authenticate('google_oauth2');
 	};
-
-    $scope.myInterval = 3000;
-    $scope.slides = [ {image: 'img4.jpg', text: "myHW: A platform for Teachers and Students to interact online."} , {image: 'img2.jpg', text: "myHW: Create assignments, and share them with your class." }, {image: 'img1.jpg', text: 'myHW: Teachers can grade student submissions, and track student performance.'}];
     
     $scope.scrollToAbout = function () {
         $location.hash('about');
