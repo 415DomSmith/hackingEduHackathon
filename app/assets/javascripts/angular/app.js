@@ -51,11 +51,18 @@ app.config(["$routeProvider", function ($routeProvider){
 		controller: 'AdditionalInfoController'
 	})
 
+
 	.when('/users/:id/courses', {
 		templateUrl: 'partials/coursesIndex.html',
 		controller: 'CoursesIndexController'
 	})
 	
+		
+	.when('/survey', {
+		templateUrl: 'partials/survey.html',
+		controller: 'SurveyController'
+	})
+
 	.otherwise({ redirectTo: '/'});
 }]);
 
